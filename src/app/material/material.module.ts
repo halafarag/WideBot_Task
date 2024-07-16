@@ -9,6 +9,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 const material = [
   MatIconModule,
@@ -19,6 +22,9 @@ const material = [
   MatListModule,
   MatCheckboxModule,
   MatDialogModule,
+  MatProgressSpinnerModule,
+  MatPaginatorModule,
+  MatTableModule,
 ];
 
 @NgModule({

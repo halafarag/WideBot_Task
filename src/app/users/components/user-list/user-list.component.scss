@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
+}
+mat-form-field {
+  width: 25% !important;
+}
+.mat-elevation-z8 {
+  width: 60% !important;
+  @media (min-width: 0px) and (max-width: 840px) {
+    width: 100% !important;
+  }
+  @media (min-width: 841px) and (max-width: 1024px) {
+    width: 70% !important;
+  }
+}
+table {
+  width: 100%;
+  @media (max-width: 768px) {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+}
+tr:hover {
+  background-color: #f5f6f9;
+}
+th {
+  background-color: #e8eaef !important;
+  color: #255c97;
+}
+td,
+th {
+  text-align: center;
+}

@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodosModule } from './todos/todos.module';
 import { MaterialModule } from './material/material.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     TodosModule,
     MaterialModule,
+    UsersModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
