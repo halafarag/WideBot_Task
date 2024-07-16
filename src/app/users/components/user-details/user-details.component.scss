@@ -1,22 +1,11 @@
+@use "../../../shared/shared-styles.scss" as *;
 .content {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
+  @include flex-center(column);
+  margin-top: 50px;
 }
-.header {
-  justify-content: flex-start;
-  align-items: flex-start;
-  .arrow_back {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    margin: 20px !important;
-  }
-  width: 100%;
-}
+
 .slider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   gap: 20px;
   width: 50%;
   @media (max-width: 426px) {
@@ -34,11 +23,13 @@ mat-card {
     width: 100% !important;
   }
   mat-card-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     text-align: center;
     margin: 20px auto;
     padding: 0px;
+    color: $blue-color;
   }
+}
+mat-icon {
+  color: $orange-color;
 }

@@ -1,0 +1,11 @@
+$blue-color: #255c97;
+$orange-color: #f46221;
+$white-color: white;
+$hover-color: #f3f5fc;
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}

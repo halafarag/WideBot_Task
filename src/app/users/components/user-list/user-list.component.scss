@@ -1,8 +1,7 @@
+@use "../../../shared/shared-styles.scss" as *;
+
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-center(column);
   margin: 20px auto;
   width: 100%;
 }
@@ -27,11 +26,11 @@ table {
   }
 }
 tr:hover {
-  background-color: #f5f6f9;
+  background-color: $hover-color;
 }
 th {
   background-color: #e8eaef !important;
-  color: #255c97;
+  color: $blue-color;
 }
 td,
 th {

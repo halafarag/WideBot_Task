@@ -1,0 +1,24 @@
+@use "../../../shared/shared-styles.scss" as *;
+.content {
+  @include flex-center;
+  gap: 10px;
+  margin-top: 20px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+.card {
+  width: 150px;
+  height: 100px;
+  @include flex-center;
+  border: solid 8px $blue-color;
+  padding: 20px;
+  font-size: 20px;
+  color: $orange-color;
+  font-weight: bold;
+  border-radius: 8px;
+  &:hover {
+    background-color: $hover-color;
+    cursor: pointer;
+  }
+}

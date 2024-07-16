@@ -7,9 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent],
+  declarations: [HomeComponent, NavbarComponent, MainComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,

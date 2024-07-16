@@ -1,3 +1,4 @@
+@use "../../../shared/shared-styles.scss" as *;
 mat-card {
   width: 25%;
   margin: 20px auto;
@@ -12,23 +13,18 @@ mat-card {
   }
 }
 mat-card-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   padding: 10px;
 }
 .new_todo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-center(column);
   mat-form-field {
     width: 100%;
   }
   button {
-    background-color: #255c97;
+    background-color: $blue-color;
     padding: 0px 40px;
-    color: white;
+    color: $white-color;
     margin: 10px 0px;
   }
   button[disabled] {

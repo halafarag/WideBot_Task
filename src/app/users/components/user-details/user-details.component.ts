@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
-import { switchMap } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -18,8 +17,7 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService,
-    private router: Router
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -61,9 +59,5 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
       this.userId++;
       this.fetchUser(this.userId);
     }
-  }
-
-  goBack() {
-    this.router.navigate(['home/users']);
   }
 }
