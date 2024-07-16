@@ -1,0 +1,31 @@
+@use "../../../shared/shared-styles.scss" as *;
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 100px;
+}
+mat-card {
+  width: 25%;
+  mat-form-field {
+    width: 80%;
+  }
+  img {
+    margin: auto;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .submit {
+    background-color: $blue-color;
+    padding: 0px 40px;
+    color: $white-color;
+    margin: 20px auto;
+  }
+  button[disabled] {
+    background-color: #b5d0ec;
+  }
+}

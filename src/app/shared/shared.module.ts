@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +18,14 @@ import { MainComponent } from './components/main/main.component';
     RouterModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
-  exports: [FormsModule, MaterialModule, HomeComponent, RouterModule],
+  exports: [
+    FormsModule,
+    MaterialModule,
+    HomeComponent,
+    RouterModule,
+    ReactiveFormsModule,
+  ],
 })
 export class SharedModule {}

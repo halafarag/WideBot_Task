@@ -1,0 +1,41 @@
+<div class="content">
+  <mat-card>
+    <img src="assets/imges/widebot_logo.jfif" width="100" height="100" />
+    <form [formGroup]="loginForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="user@info.com" formControlName="email" />
+        <mat-error>
+          <app-error-messages
+            [control]="formControls['email']!"
+          ></app-error-messages
+        ></mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Input any 6 character"
+          formControlName="password"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error>
+          <app-error-messages
+            [control]="formControls['password']!"
+          ></app-error-messages
+        ></mat-error>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        (click)="login()"
+        class="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </form>
+  </mat-card>
+</div>

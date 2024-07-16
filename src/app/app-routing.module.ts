@@ -5,9 +5,11 @@ import { TodoListComponent } from './todos/components/todo-list/todo-list.compon
 import { UserListComponent } from './users/components/user-list/user-list.component';
 import { UserDetailsComponent } from './users/components/user-details/user-details.component';
 import { MainComponent } from './shared/components/main/main.component';
+import { LoginComponent } from './auth/components/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   {
     path: 'home',
     component: HomeComponent,

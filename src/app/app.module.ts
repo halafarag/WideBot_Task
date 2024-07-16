@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodosModule } from './todos/todos.module';
 import { MaterialModule } from './material/material.module';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { UsersModule } from './users/users.module';
     TodosModule,
     MaterialModule,
     UsersModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
