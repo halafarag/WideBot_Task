@@ -1,0 +1,12 @@
+mat-list-item {
+  border: dashed rgb(225, 218, 218) 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 0px 5px 0px !important;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

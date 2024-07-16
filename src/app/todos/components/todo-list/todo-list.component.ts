@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Todo } from '../../models/todo';
 import { TodoService } from '../../services/todo.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
@@ -42,7 +41,7 @@ export class TodoListComponent implements OnInit {
         }
       });
 
-      this.clearAllChecked = false; // Reset the checkbox after clearing todos
+      this.clearAllChecked = false;
     }
   }
 }

@@ -1,26 +1,39 @@
 <mat-card>
-    <mat-card-header>
-      <mat-card-title>Todo List</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-form-field appearance="fill">
-        <mat-label>New Todo</mat-label>
-        <input matInput [(ngModel)]="newTodo" placeholder="Add a new todo" />
-      </mat-form-field>
-      <button mat-raised-button color="primary" (click)="addTodo()">Add</button>
-    </mat-card-content>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <ng-container *ngIf="(todos$ | async)!.length > 0">
+  <mat-card-header>
+    <mat-card-title>Todo List</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="new_todo">
+    <mat-form-field appearance="outline">
+      <mat-label>New Todo</mat-label>
+      <input matInput [(ngModel)]="newTodo" placeholder="Add a new todo" />
+    </mat-form-field>
+    <button mat-raised-button (click)="addTodo()" [disabled]="!newTodo">
+      Add
+    </button>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-content class="todos_list">
+    <ng-container *ngIf="(todos$ | async)!.length > 0">
+      <div class="clear_all">
         <mat-checkbox [(ngModel)]="clearAllChecked">Clear All</mat-checkbox>
-        <button mat-raised-button color="warn" (click)="clearTodos()" [disabled]="!clearAllChecked">
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="clearTodos()"
+          [disabled]="!clearAllChecked"
+        >
           Clear All
         </button>
-      </ng-container>
-      <mat-list>
-        <app-todo *ngFor="let todo of todos$ | async; let i = index" [todo]="todo" [index]="i" (remove)="removeTodo($event)">
-        </app-todo>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
-  
+      </div>
+    </ng-container>
+    <mat-list>
+      <app-todo
+        *ngFor="let todo of todos$ | async; let i = index"
+        [todo]="todo"
+        [index]="i"
+        (remove)="removeTodo($event)"
+      >
+      </app-todo>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

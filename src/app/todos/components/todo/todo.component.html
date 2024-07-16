@@ -1,7 +1,10 @@
 <mat-list-item>
-    {{ todo }}
+  <div class="content">
+    <div class="todo_text">
+      {{ todo }}
+    </div>
     <button mat-icon-button color="warn" (click)="onRemove()">
       <mat-icon>delete</mat-icon>
     </button>
-  </mat-list-item>
-  
+  </div>
+</mat-list-item>

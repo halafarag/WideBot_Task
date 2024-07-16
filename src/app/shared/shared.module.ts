@@ -4,9 +4,14 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeComponent,
+    NavbarComponent
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule, MaterialModule, RouterModule, FormsModule],
   exports: [FormsModule, MaterialModule],

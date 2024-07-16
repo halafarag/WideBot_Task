@@ -1,15 +1,45 @@
 mat-card {
-    max-width: 400px;
-    margin: 20px auto;
+  width: 25%;
+  margin: 20px auto;
+  @media (max-width: 500px) {
+    width: 90%;
   }
-  
-  mat-list-item {
+  @media (min-width: 500px) and (max-width: 768px) {
+    width: 50%;
+  }
+  @media (width: 1024px) {
+    width: 40%;
+  }
+}
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.new_todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  mat-form-field {
+    width: 100%;
+  }
+  button {
+    background-color: #255c97;
+    padding: 0px 40px;
+    color: white;
+    margin: 10px 0px;
+  }
+  button[disabled] {
+    background-color: #b5d0ec;
+  }
+}
+.todos_list {
+  .clear_all {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0px;
   }
-  
-  button[mat-raised-button] {
-    margin-right: 10px;
-  }
-  
+}
