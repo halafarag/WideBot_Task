@@ -1,0 +1,15 @@
+mat-card {
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  mat-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  button[mat-raised-button] {
+    margin-right: 10px;
+  }
+  
