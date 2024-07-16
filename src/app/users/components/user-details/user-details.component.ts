@@ -1,71 +1,69 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 import { switchMap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.scss'],
 })
-export class UserDetailsComponent implements OnInit {
+export class UserDetailsComponent implements OnInit, OnDestroy {
   userId!: number;
   userData: User = {} as User;
   showLoader: boolean = true;
+  paramSubscription!: Subscription;
 
   constructor(
-    private activeRoute: ActivatedRoute,
-    private userService: UserService
+    private route: ActivatedRoute,
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.activeRoute.paramMap
-      .pipe(
-        switchMap((params: ParamMap) => {
-          this.userId = +params.get('id')!;
-          return this.userService.getUserById(this.userId);
-        })
-      )
-      .subscribe(
-        (data: User) => {
-          this.showLoader = false;
-          console.log(data);
-          this.userData = data;
-        },
-        (error) => {
-          console.log('Error:', error);
-        }
-      );
+    this.paramSubscription = this.route.params.subscribe((params) => {
+      this.userId = +params['id'];
+      this.fetchUser(this.userId);
+    });
   }
 
-  goPrevious() {
-    if (this.userId <= 1) {
-      return;
+  ngOnDestroy(): void {
+    if (this.paramSubscription) {
+      this.paramSubscription.unsubscribe();
     }
-    this.userId--;
-    this.getUser();
   }
 
-  goNext() {
-    if (this.userId >= 12) {
-      return;
-    }
-    this.userId++;
-    this.getUser();
-  }
-
-  private getUser() {
+  fetchUser(userId: number) {
     this.showLoader = true;
-    this.userService.getUserById(this.userId).subscribe(
+    this.userService.getUserById(userId).subscribe(
       (data: User) => {
-        this.showLoader = false;
         this.userData = data;
+        this.showLoader = false;
       },
       (error) => {
-        console.log('Error :', error);
+        console.log('Error:', error);
+        this.showLoader = false;
       }
     );
   }
-  goBack() {}
+
+  goPrevious() {
+    if (this.userId > 1) {
+      this.userId--;
+      this.fetchUser(this.userId);
+    }
+  }
+
+  goNext() {
+    if (this.userId < 10) {
+      this.userId++;
+      this.fetchUser(this.userId);
+    }
+  }
+
+  goBack() {
+    this.router.navigate(['home/users']);
+  }
 }
