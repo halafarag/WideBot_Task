@@ -2,13 +2,14 @@
 .content {
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  margin-top: 100px;
+  align-items: center;
+  height: 100vh;
 }
 mat-card {
   width: 25%;
   mat-form-field {
     width: 80%;
+    margin-bottom: 10px;
   }
   img {
     margin: auto;
@@ -27,5 +28,14 @@ mat-card {
   }
   button[disabled] {
     background-color: #b5d0ec;
+  }
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+  @media (min-width: 501px) and (max-width: 768px) {
+    width: 50%;
+  }
+  @media (min-width: 770px) and (max-width: 1024px) {
+    width: 40%;
   }
 }

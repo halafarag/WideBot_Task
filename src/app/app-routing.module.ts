@@ -6,6 +6,7 @@ import { UserListComponent } from './users/components/user-list/user-list.compon
 import { UserDetailsComponent } from './users/components/user-details/user-details.component';
 import { MainComponent } from './shared/components/main/main.component';
 import { LoginComponent } from './auth/components/login/login.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canMatch: [AuthGuard],
     children: [
       { path: '', redirectTo: 'main', pathMatch: 'full' },
       { path: 'main', component: MainComponent },
